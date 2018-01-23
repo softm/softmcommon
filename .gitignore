@@ -1,1 +1,11 @@
 /build
+src/main/main.iml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/libraries/libs.xml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/libraries/libs_bak.xml
+src/main/gen/
+.idea/gradle.xml
+local.properties

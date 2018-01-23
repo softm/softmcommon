@@ -29,8 +29,8 @@ public class Constant {
 	}
 
 	public static String SERVER_COMMON_URL= SERVER?"":""; // 공통
-//	public static String SERVER_CHECK_URL = SERVER?"":""; //
-//	public static String SERVER_DATA_URL  = SERVER?"":""; //
+	public static String SERVER_CHECK_URL = SERVER?"":""; //
+	public static String SERVER_DATA_URL  = SERVER?"":""; //
 
 	// 처리 상수
 	/** 성공 */

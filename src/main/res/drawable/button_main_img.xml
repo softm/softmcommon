@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- disabled -->
+    <item android:state_enabled="false">
+		<shape>
+		    <solid android:color="@color/mainBgColor"/>
+		    <stroke android:width="1dip" android:color="@color/mainBgColor" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="17dp" android:top="0dp" android:right="17dp" android:bottom="0dp" />
+		</shape>          
+    </item>
+    <item android:state_focused="true" android:state_pressed="false"  >
+		<shape>
+		    <solid android:color="@color/mainBgColor"/>
+		    <stroke android:width="1dip" android:color="@color/mainBgColor" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="17dp" android:top="0dp" android:right="17dp" android:bottom="0dp" />
+		</shape>        
+     </item>
+    <item android:state_focused="true" android:state_pressed="true">
+		<shape>
+		    <solid android:color="#C25B6C"/>
+		    <stroke android:width="1dip" android:color="#C25B6C" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="10dp" android:top="0dp" android:right="10dp" android:bottom="0dp" />
+		</shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="true">
+		<shape>
+		    <solid android:color="#C25B6C"/>
+		    <stroke android:width="1dip" android:color="#C25B6C" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="10dp" android:top="0dp" android:right="10dp" android:bottom="0dp" />
+		</shape>              
+    </item>
+    <item android:state_checked="true">
+		<shape>
+		    <solid android:color="#C25B6C"/>
+		    <stroke android:width="1dip" android:color="#C25B6C" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="10dp" android:top="0dp" android:right="10dp" android:bottom="0dp" />
+		</shape>       
+    </item>        
+    <item >
+		<shape>
+		    <solid android:color="@color/mainBgColor"/>
+		    <stroke android:width="1dip" android:color="@color/mainBgColor" />
+		    <corners android:radius="0dip"/>
+		    <padding android:left="17dp" android:top="0dp" android:right="17dp" android:bottom="0dp" />
+		</shape> 
+    </item>
+</selector>

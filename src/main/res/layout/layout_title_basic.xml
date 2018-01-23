@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+	<RelativeLayout
+		android:background="@color/Grey"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"		
+		>
+
+		<ImageButton
+			android:id="@+id/btn_top0"
+			android:background="@drawable/home_bt_img"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="@dimen/titleBarMainMarginLeft"
+			android:visibility="invisible"
+			 />		
+		<Button
+			android:id="@+id/btn_slide"
+			android:text="슬라이드"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="@dimen/titleBarMainMarginLeft"
+               android:clickable="true"
+               android:focusableInTouchMode="true"
+               android:visibility="visible"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			 />		
+		<TextView
+		    android:id="@+id/title_text"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="true"
+		    android:layout_toRightOf="@+id/btn_top0"
+		    android:text="test~~~~"
+		    android:textColor="#fff"
+		    android:textSize="@dimen/titleBarFontSize"
+		    android:layout_marginLeft="20dp"
+		    android:clickable="true"
+		    android:visibility="invisible"
+		      />
+		
+		<ImageButton
+		    android:id="@+id/btn_top1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="true"
+		    android:layout_toLeftOf="@+id/btn_top2"
+			android:background="@drawable/btn_back"
+		    android:layout_marginRight="7dp"
+		    />
+		
+		<ImageButton
+		    android:id="@+id/btn_top2"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerInParent="true"
+		    android:background="@drawable/list_img"
+			android:layout_marginRight="@dimen/titleBarMainMarginRight"
+		/>
+
+		<ImageView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/btn_top1"
+		    android:layout_centerHorizontal="true"
+		    android:background="@drawable/top_logo"
+		    android:clickable="true" />
+		
+	</RelativeLayout>
+
+</FrameLayout>

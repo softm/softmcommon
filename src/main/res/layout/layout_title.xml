@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<RelativeLayout
+		android:background="@drawable/top_bg"
+		android:layout_width="fill_parent"
+		android:layout_height="@dimen/titleBarHeight"		
+		>
+
+		<ImageButton
+			android:id="@+id/btn_back"
+			android:background="@drawable/previous_img"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="@dimen/titleBarMainMarginLeft"
+			android:visibility="visible"
+			 />		
+
+		<TextView
+		    android:id="@+id/title_text"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="true"
+		    android:layout_toRightOf="@+id/btn_back"
+		    android:text="test~~~~"
+		    android:textColor="#f00"
+		    android:textSize="@dimen/titleBarFontSize"
+		    android:layout_marginLeft="20dp"
+		    android:clickable="true"
+		      />
+
+		<ImageButton
+		    android:id="@+id/btn_top1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="true"
+		    android:layout_toLeftOf="@+id/btn_top2"
+		    android:background="@drawable/barcode_img"
+		    android:layout_marginRight="7dp"
+		    />
+		
+		<ImageButton
+		    android:id="@+id/btn_top2"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerInParent="true"
+		    android:background="@drawable/list_img"
+			android:layout_marginRight="@dimen/titleBarMainMarginRight"
+		/>		
+	</RelativeLayout>
+
+</FrameLayout>

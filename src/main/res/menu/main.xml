@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.entropykorea.gas.gum.MainActivity" >
+
+    <item
+        android:id="@+id/menu_action_1"
+        android:showAsAction="never"
+        android:title="프로그램 정보..."/>
+
+</menu>

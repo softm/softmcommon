@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spnFontSize" >17sp</dimen>    
+    <dimen name="headerFontSize" >17sp</dimen>    
+	<dimen name="headerPaddingLeft" >3dp</dimen>    
+	<dimen name="headerPaddingRight" >3dp</dimen>    
+    <dimen name="headerHeight" >40dp</dimen>    
+    <dimen name="headerHeight2" >50dp</dimen>    
+    <dimen name="headerHeight3" >45dp</dimen>  
+    <dimen name="headerHeight4" >90dp</dimen>
+    <dimen name="headerHeight5" >120dp</dimen>
+    <dimen name="listFontSize" >17sp</dimen>    
+    <dimen name="listHeight" >40dp</dimen>
+	<dimen name="listHeight2" >60dp</dimen>    
+	<dimen name="listHeight3" >70dp</dimen>    
+    <dimen name="listDividerHeight" >0.67dp</dimen>
+	<dimen name="listMarginTop" >10dp</dimen>    
+    <dimen name="mainMarginTop" >10dp</dimen>    
+    <dimen name="mainMarginLeft" >17dp</dimen>    
+    <dimen name="mainMarginRight">17dp</dimen>    
+    <dimen name="mainMarginBottom">10dp</dimen>    
+    <dimen name="titleBarHeight">203dp</dimen>    
+    <dimen name="titleBarMainMarginLeft">12dp</dimen>    
+    <dimen name="titleBarMainMarginRight">12dp</dimen>    
+    <dimen name="titleBarFontSize">21dp</dimen>
+    <dimen name="fontSize17">17sp</dimen>    
+    <dimen name="fontSize18">18sp</dimen>    
+    <dimen name="fontSize21">21sp</dimen>    
+    <dimen name="fontSize22">22sp</dimen>
+
+    <dimen name="editTextFontSize">17sp</dimen>
+    <dimen name="editTextHeight">31dp</dimen>    
+    <dimen name="editTextRadius">5dip</dimen>    
+    <dimen name="editTextPadding">10dp</dimen>
+    <dimen name="editTextPaddingTop">5dp</dimen>    
+
+    <dimen name="buttonHeight">31dp</dimen>    
+    <dimen name="buttonFontSize" >17sp</dimen>    
+    <dimen name="loginButonFontSize" >18sp</dimen>
+    <dimen name="loginTitleFontSize" >35sp</dimen>
+    <item name="loginActivityWidthWeight" format="float" type="dimen">4</item>    
+        
+    <dimen name="mainActivityMarginTop" >15dp</dimen>
+    <dimen name="mainActivityMarginLeft" >15dp</dimen>
+    
+</resources>

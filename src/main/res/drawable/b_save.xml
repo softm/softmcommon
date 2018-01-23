@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- pressed -->
+    <item android:state_pressed="true"
+        android:drawable="@drawable/b_save_pressed"
+        />
+    <!-- focused -->
+    <item android:state_focused="true"
+        android:drawable="@drawable/b_save_img"
+        />
+    <!-- disabled -->
+    <item android:state_enabled="false"
+        android:drawable="@drawable/b_save_disabled"
+        />
+    <!-- default -->
+    <item android:drawable="@drawable/b_save_img"
+        />
+        
+</selector>

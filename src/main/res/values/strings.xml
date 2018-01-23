@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alert_str">알림</string>
+    <string name="alert_yes_str">예</string>
+    <string name="alert_no_str">아니오</string>
+    <string name="alert_confirm_str">확인</string>
+    <string name="alert_cancel_str">취소</string>
+    <string name="alert_negative_str">아니오</string>
+    
+        <string name="proc_gid">tmp</string>
+    
+    <string name="label_all">전체</string>    
+    <string name="label_spn_non_select">-선택-</string>
+    <string name="label_spn_non_select2">선택</string>  
+</resources>

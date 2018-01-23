@@ -3,3 +3,13 @@
 local.properties
 src/main/main.iml
 src/main/gen/
+src/main/main.iml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/libraries/libs.xml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/libraries/libs_bak.xml
+.idea/gradle.xml
+local.properties
+

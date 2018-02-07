@@ -1,7 +1,5 @@
 package net.softm.lib.common;
 
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.RequestBody;
 
 import net.softm.lib.Constant;
 import net.softm.lib.Util;
@@ -9,6 +7,9 @@ import net.softm.lib.Util;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.UnsupportedEncodingException;
+
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
 
 /**
  * AsyncHttpParam
@@ -19,7 +20,7 @@ public class AsyncHttpParam {
 	private String url = "";
 	private RequestBody formBody;
 	public AsyncHttpParam(String url) {
-		this(url,new FormEncodingBuilder().build());
+		this(url,new FormBody.Builder().build());
 	}
 	
 	public AsyncHttpParam(String url, RequestBody formBody) {
@@ -28,11 +29,11 @@ public class AsyncHttpParam {
 		this.formBody = formBody;
 		Util.i("url : " + this.url );
 	}
-	public AsyncHttpParam(String url, FormEncodingBuilder fBuilder) {
+	public AsyncHttpParam(String url, FormBody.Builder fBuilder) {
 		this(url,fBuilder,"");
 	}
 
-	public AsyncHttpParam(String url, FormEncodingBuilder fBuilder,String s) {
+	public AsyncHttpParam(String url, FormBody.Builder fBuilder,String s) {
 		super();
 		this.url = url;
 		this.serivce = s;
@@ -63,7 +64,7 @@ public class AsyncHttpParam {
 		super();
 		this.serivce= s;
 		this.url = url;
-		FormEncodingBuilder fBuilder = new FormEncodingBuilder();
+		FormBody.Builder fBuilder = new FormBody.Builder();
 		try {
 			this.formBody = fBuilder.add("p",java.net.URLEncoder.encode(p, "UTF-8")).add("service",this.serivce).build();
 		} catch (UnsupportedEncodingException e) {

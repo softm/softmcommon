@@ -2,15 +2,16 @@ package net.softm.lib.common;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.StrictMode;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+
 
 import net.softm.lib.BaseActivity;
 import net.softm.lib.Constant;
@@ -20,7 +21,12 @@ import net.softm.lib.Util;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.SocketTimeoutException;
+import java.net.URLConnection;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * AsyncHttp
@@ -98,9 +104,14 @@ public abstract class AsyncHttp<R>
 		String errMsg = null;
 		try {
 			String str="";
-			OkHttpClient client = new OkHttpClient();
-			client.setConnectTimeout(Constant.DEFAULT_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS); // connect timeout
-			client.setReadTimeout(Constant.DEFAULT_READ_TIMEOUT, TimeUnit.MILLISECONDS);    // socket timeout
+//			OkHttpClient client = new OkHttpClient();
+			WebkitCookieManagerProxy proxy = new WebkitCookieManagerProxy();
+
+			OkHttpClient client = new OkHttpClient.Builder().cookieJar(proxy)
+					.connectTimeout(Constant.DEFAULT_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
+					.writeTimeout(Constant.DEFAULT_WRITE_TIMEOUT, TimeUnit.SECONDS)
+					.readTimeout(Constant.DEFAULT_READ_TIMEOUT, TimeUnit.MILLISECONDS)
+					.build();
 			Util.i("[" + TAG + "] send request url [\"" + data.getSerivce()+ "\"] : " + data.getUrl());
 //		new Request.Builder().url(data.getUrl())
 //		.post(data.getFormBody()).build();
@@ -110,8 +121,9 @@ public abstract class AsyncHttp<R>
 			Response response;
 
 			response = client.newCall(request).execute();
+//			saveCookie(conn);
 
-				httpCode = response.code();
+			httpCode = response.code();
 				str = response.body().string();
 
 			Util.i("[" + TAG + "] retrun string data [\"" + data.getSerivce()+ "\"] : " + str);
@@ -272,4 +284,25 @@ public abstract class AsyncHttp<R>
 			super.onCancelled();
 		}
     }
+
+	/**
+	 * 쿠키값을 ConnectionManager에 저장한다.
+	 * @param conn URLConnection 인스턴스
+	 */
+	public static void saveCookie(URLConnection conn) {
+		String cookie = conn.getHeaderField("Set-Cookie");
+		WLog.d(TAG, "saveCookie, cookie=" + cookie);
+		if (cookie != null) {
+			String url = conn.getURL().toString();
+			CookieManager cookieManger = CookieManager.getInstance();
+			cookieManger.setCookie(url, cookie);
+
+			// permanent 영역에 쿠기를 즉시 동기화 한다.
+			if (Build.VERSION.SDK_INT < 21) {
+				CookieSyncManager.getInstance().sync();
+			} else {
+				cookieManger.flush();
+			}
+		}
+	}
 }

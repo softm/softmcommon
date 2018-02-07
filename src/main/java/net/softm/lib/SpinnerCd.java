@@ -10,7 +10,6 @@ import android.widget.ResourceCursorAdapter;
 import android.widget.Spinner;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.FormEncodingBuilder;
 
 import net.softm.lib.adapter.CodeAdapter;
 import net.softm.lib.common.AsyncHttp;
@@ -29,6 +28,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
+
+import okhttp3.FormBody;
+
 /**
  * SpinnerCd
  * @author softm 
@@ -288,7 +290,7 @@ public class SpinnerCd extends Spinner {
 			}
 //	 	}.execute(new AsyncHttpParam(Constant.SERVER_COMMON_URL,
 		}.sync(new AsyncHttpParam(serviceUrl,
-				new FormEncodingBuilder().add("serverKey", "data")
+				new FormBody.Builder().add("serverKey", "data")
 										 .add("p", code)
 										 ,StringUtils.defaultString(service).equals("")?"codeCommon":service
 										 ));

@@ -4,11 +4,18 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.os.Build;
 import android.util.Log;
+import android.view.View;
+
+import androidx.core.content.ContextCompat;
+
 /**
  * Util
  * @author softm 
@@ -158,7 +165,26 @@ public class Util {
 		String rtn = new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new java.util.Date());
 		return rtn;
 	}
-	
+
+
+	public static String[] getStringArray(ArrayList<String> arr)
+	{
+
+		// declaration and initialise String Array
+		String str[] = new String[arr.size()];
+
+		// Convert ArrayList to object array
+		Object[] objArr = arr.toArray();
+
+		// Iterating and converting to String
+		int i = 0;
+		for (Object obj : objArr) {
+			str[i++] = (String)obj;
+		}
+
+		return str;
+	}
+
 	// log
 	public static void w(String msg) {
 		w(Constant.LOG_TAG, msg);
@@ -223,6 +249,17 @@ public class Util {
 	public static void v(String tag, String msg) {
 		if (Constant.DEBUG)
 			Log.v(tag, msg);
+	}
+
+	public static void setBackground(Context context, View view, int background) {
+		try {
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+				view.setBackground(ContextCompat.getDrawable(context, background));
+			} else {
+				view.setBackgroundDrawable(ContextCompat.getDrawable(context, background));
+			}
+		} catch (Exception ex) {
+		}
 	}
 	
 }

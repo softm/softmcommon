@@ -10,7 +10,7 @@ import android.preference.PreferenceManager;
  */
 public class Pref extends Object {
 
-	public static final String TAG = "CITIS";
+	public static final String TAG = "SOFTM";
 
 	// USER_ID
 	public static void setUserId(final Context ctx, String value) {

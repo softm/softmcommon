@@ -27,10 +27,10 @@ public class DilatingDotDrawable extends Drawable {
     @Override
     public void draw(Canvas canvas) {
         final Rect bounds = getBounds();
-// 원형.
-//        canvas.drawCircle(bounds.centerX(), bounds.centerY(), radius - 1, mPaint);
+// 원형 ~~
+        canvas.drawCircle(bounds.centerX(), bounds.centerY(), radius - 1, mPaint);
 // 사각형.
-        canvas.drawRect(bounds,mPaint);
+//        canvas.drawRect(bounds,mPaint);
 
     }
 

@@ -22,6 +22,8 @@ import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import net.softm.lib.common.SimpleProgressDialog;
 
 import java.util.Timer;
@@ -29,12 +31,14 @@ import java.util.TimerTask;
 
 /**
  * BaseActivity
- * 기본엑티비티
+ * 기본엑티비티 ~
  * @author softm 
  */
-public abstract class BaseActivity extends Activity {
+//public abstract class BaseActivity extends Activity {
+// restart service ondestory 동작.
+public abstract class BaseActivity extends AppCompatActivity {
 	protected SimpleProgressDialog progressDialog;
-	public static final String LOG_TAG = "CITIS";
+	public static final String LOG_TAG = "SOFTM";
 	
     protected DefaultApplication mApp;
 	public boolean DEBUG = Constant.DEBUG;
@@ -131,9 +135,9 @@ public abstract class BaseActivity extends Activity {
 
 		TextView messageText = (TextView)dialog.findViewById(android.R.id.message);
 		messageText.setGravity(Gravity.CENTER);
-        
+
     }
-    
+
 //	protected void confirm(int msg) {
 //		confirm(msg, -1, null );
 //    }
@@ -143,7 +147,7 @@ public abstract class BaseActivity extends Activity {
 //    }
 
 	public void confirm(int msg, DialogInterface.OnClickListener onClick){
-        String strMsg    = getString(msg);    	
+        String strMsg    = getString(msg);
         confirm(strMsg, null,onClick, null,null);
     }
 
@@ -152,60 +156,60 @@ public abstract class BaseActivity extends Activity {
     }
 
 	public void confirm(int msg, DialogInterface.OnClickListener onClick,DialogInterface.OnClickListener onCancel ){
-        String strMsg    = getString(msg);    	
+        String strMsg    = getString(msg);
         confirm(strMsg, null,onClick, null,onCancel );
     }
 
 	public void confirm(String msg, DialogInterface.OnClickListener onClick,DialogInterface.OnClickListener onCancel ){
         confirm(msg, null,onClick, null,onCancel );
     }
-	
+
 	public void confirm(int msg
 			, int btnText
-			, DialogInterface.OnClickListener onClick 
+			, DialogInterface.OnClickListener onClick
 			, int btnCancelText
-			, DialogInterface.OnClickListener onCancel  
+			, DialogInterface.OnClickListener onCancel
     ) {
 		confirm(getString(msg), btnText!=-1?getString(btnText):null,onClick, btnCancelText!=-1?getString(btnCancelText):null,onCancel,null,null );
     }
-	
+
 	public void confirm(String msg
 			, int btnText
-			, DialogInterface.OnClickListener onClick 
+			, DialogInterface.OnClickListener onClick
 			, int btnCancelText
-			, DialogInterface.OnClickListener onCancel  
+			, DialogInterface.OnClickListener onCancel
     ) {
 		confirm(msg, btnText!=-1?getString(btnText):null,onClick, btnCancelText!=-1?getString(btnCancelText):null,onCancel,null,null );
     }
-	
+
 	public void confirm(String msg
 			, String btnText
-			, DialogInterface.OnClickListener onClick 
+			, DialogInterface.OnClickListener onClick
 			, String btnCancelText
-			, DialogInterface.OnClickListener onCancel  
+			, DialogInterface.OnClickListener onCancel
     ) {
 		confirm(msg, btnText,onClick, btnCancelText,onCancel,null,null );
     }
-	
+
 	public void confirm(int msg
 			, int btnText
-			, DialogInterface.OnClickListener onClick 
+			, DialogInterface.OnClickListener onClick
 			, int btnCancelText
-			, DialogInterface.OnClickListener onCancel 
+			, DialogInterface.OnClickListener onCancel
             , int btnNegativeText
             , DialogInterface.OnClickListener onNegative
             ) {
 		confirm(getString(msg), btnText!=-1?getString(btnText):null,onClick
 				   , btnCancelText!=-1?getString(btnCancelText):null, onCancel
-				   , btnNegativeText!=-1?getString(btnNegativeText):null,onNegative 
+				   , btnNegativeText!=-1?getString(btnNegativeText):null,onNegative
 				);
 	}
-	
+
 	public void confirm(String msg
 			, String btnText
-			, DialogInterface.OnClickListener onClick 
+			, DialogInterface.OnClickListener onClick
 			, String btnCancelText
-			, DialogInterface.OnClickListener onCancel 
+			, DialogInterface.OnClickListener onCancel
             , String btnNegativeText
             , DialogInterface.OnClickListener onNegative
             ) {
@@ -243,16 +247,16 @@ public abstract class BaseActivity extends Activity {
 	                            }
 	                        });
         }
-        
+
         AlertDialog dialog = alt_bld.show();
-        
+
 		TextView messageText = (TextView)dialog.findViewById(android.R.id.message);
 		messageText.setGravity(Gravity.CENTER);
-        
+
 	}
-	
-	
-	
+
+
+
 	// confirm dialog
 	// for Reflection
 	String confirmMethodNameOk;
@@ -265,7 +269,7 @@ public abstract class BaseActivity extends Activity {
 		confirmMethodNameOk = methodNameOk;
 		confirmObject = this;
 
-		alert(message, 
+		alert(message,
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -278,17 +282,17 @@ public abstract class BaseActivity extends Activity {
 							}
 						}
 					}
-				}); 
+				});
 		beep();
 
 	}
-	
+
 	public void confirm(String message, String methodNameOk, String methodNameCancel) {
 		confirmMethodNameOk = methodNameOk;
 		confirmMethodNameCancel = methodNameCancel;
 		confirmObject = this;
 
-		confirm(message, 
+		confirm(message,
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -301,7 +305,7 @@ public abstract class BaseActivity extends Activity {
 							}
 						}
 					}
-				}, 
+				},
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -347,7 +351,7 @@ public abstract class BaseActivity extends Activity {
 
 		beep();
 	}
-	
+
     public boolean isCameraAvailable() {
         PackageManager pm = getPackageManager();
         return pm.hasSystemFeature(PackageManager.FEATURE_CAMERA);

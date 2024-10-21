@@ -10,7 +10,7 @@ public class Var {
 	public String USER_NM = ""; // 사용자 이름
 	public SiteType SITE_TYPE; // C : 시공사, 	S : 감리사
 	
-	public String SERVER_IP = ""; // CITIS
-	public String SERVER_PORT = ""; // CITIS
-	public String slideShow = "N"; // CITIS
+	public String SERVER_IP = ""; // SOFTM
+	public String SERVER_PORT = ""; // SOFTM
+	public String slideShow = "N"; // SOFTM
 }

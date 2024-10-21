@@ -50,7 +50,7 @@
             android:layout_marginBottom="@dimen/mainMarginBottom" 
             >
 
-			     <kr.go.citis.lib.SpinnerCd
+			     <net.softm.lib.SpinnerCd
 			         android:id="@+id/spn_cd"
 			         android:layout_width="wrap_content"
 			         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
 			         android:layout_marginLeft="0dip"
 			         android:layout_toLeftOf="@+id/btn_spn_selected" />
 
-  				<kr.go.citis.lib.ListViewMP
+  				<net.softm.lib.ListViewMP
   				    android:id="@+id/listView1"
   				    android:layout_width="match_parent"
   				    android:layout_height="match_parent"

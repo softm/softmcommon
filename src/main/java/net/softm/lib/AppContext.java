@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
  * @author softm 
  */
 public class AppContext {
-	public static final String PREF_KEY = "CITIS";
+	public static final String PREF_KEY = "SOFTM";
 	
 	public static Context getContext() {
 		return DefaultApplication.mInstance;

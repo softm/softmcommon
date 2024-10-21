@@ -9,11 +9,14 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
+import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+
+import androidx.annotation.ColorInt;
 
 import net.softm.lib.R;
 
@@ -136,11 +139,14 @@ public class DilatingDotsProgressBar extends View {
         removeCallbacks(mDelayedShow);
         long diff = System.currentTimeMillis() - mStartTime;
         if ((diff >= delay) || (mStartTime == -1)) {
+            Log.e(TAG,"hide");
             mDelayedHide.run();
         } else {
             if ((delay - diff) <= 0) {
+                Log.e(TAG,"hide");
                 mDelayedHide.run();
             } else {
+                Log.e(TAG,"hide");
                 postDelayed(mDelayedHide, delay - diff);
             }
         }
@@ -307,15 +313,25 @@ public class DilatingDotsProgressBar extends View {
 
     protected void startAnimations() {
         mShouldAnimate = true;
-        for (Animator anim : mAnimations) {
-            anim.start();
-        }
+
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    for (Animator anim : mAnimations) {
+                        anim.start();
+                    }
+                }
+            }, 0);
+
+
     }
 
     protected void stopAnimations() {
         mShouldAnimate = false;
         removeCallbacks();
         for (Animator anim : mAnimations) {
+            anim.removeAllListeners();
             anim.cancel();
         }
     }

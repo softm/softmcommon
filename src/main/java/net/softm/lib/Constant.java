@@ -11,7 +11,7 @@ import android.os.Environment;
 public class Constant {
 	public static final boolean SERVER 				= true; //
 	public static final boolean DEBUG 					= BuildConfig.DEBUG; // > ADT r17
-	public final static String SD_DIR = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+(Constant.DEBUG?"":".")+"citis";
+	public final static String SD_DIR = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+(Constant.DEBUG?"":".")+"SOFTM";
 	// DefaultApplication에서 초기화. ------------
 	public static String WORK_DIR     = "";
 	// ------------ DefaultApplication에서 초기화.
@@ -65,4 +65,6 @@ public class Constant {
 	public static final int DEFAULT_CONNECT_TIMEOUT = 5000;
 	/** HTTP 연결 이후 Input Stream 읽기에 대한 기본 Timeout */
 	public static final int DEFAULT_READ_TIMEOUT = 10000;
+	/** HTTP 연결 이후 Input Stream 쓰기기에 대한 기본 Timeout softm add */
+	public static final int DEFAULT_WRITE_TIMEOUT = 10000;
 }

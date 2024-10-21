@@ -20,7 +20,7 @@ import android.util.Log;
  * @author softm 
  */
 public class PicCamera {
-	public static final String TAG = "CITIS";
+	public static final String TAG = "SOFTM";
 	private Activity context;
     private String mode = null  ;
     private String fileName= null;

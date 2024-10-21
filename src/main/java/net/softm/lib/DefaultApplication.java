@@ -18,7 +18,7 @@ import java.util.List;
  */
 public abstract class DefaultApplication extends Application {
 	public List <String> loginInfo  ;
-	public static final String TAG = "CITIS";	
+	public static final String TAG = "SOFTM";
 	public static SQLiteDatabase db = null;
 	public static DefaultApplication mInstance = null;
 	public static SQLiteDatabase mSqliteDatabase = null;
@@ -37,7 +37,7 @@ public abstract class DefaultApplication extends Application {
 	}
 
 	@Override
-	public void onCreate() {
+public void onCreate() {
 		super.onCreate();
         // register to be informed of activities starting up
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {

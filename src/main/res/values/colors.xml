@@ -28,6 +28,8 @@
     <color name="titleBarBackground">#12395a</color >
         
     <color name="spnFontColor">#000000</color>
+    <color name="mainColor">#3498db</color>
+    <color name="mainTextColor">#1C2741</color>
     <color name="mainBgColor">#1C2741</color>
     
     <color name="buttonTextColor">#333333</color>

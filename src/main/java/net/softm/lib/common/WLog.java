@@ -22,13 +22,13 @@ import java.util.Date;
  */
 public class WLog {
 
-	public static final String LOG_FILE_PATH = Environment.getExternalStorageDirectory() + "/HANCAP";
+	public static final String LOG_FILE_PATH = Environment.getExternalStorageDirectory() + "/SOFTM";
 	
 	public static final int LOG_FILE_MAX_COUNT = 10;
 	
 	private static boolean isTraceLog = true;
 	
-	private static String TAG = "HANCAP";
+	private static String TAG = "softm";
 
 	private static boolean isDebug = BuildConfig.DEBUG;
 	/**

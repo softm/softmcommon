@@ -116,8 +116,12 @@ public abstract class AsyncHttp<R>
 //		new Request.Builder().url(data.getUrl())
 //		.post(data.getFormBody()).build();
 
+//			Request request = new Request.Builder().url(data.getUrl())
+//					.post(data.getFormBody()).build();
+
 			Request request = new Request.Builder().url(data.getUrl())
-					.post(data.getFormBody()).build();
+					.get().build();
+
 			Response response;
 
 			response = client.newCall(request).execute();
@@ -193,7 +197,7 @@ public abstract class AsyncHttp<R>
 				e.printStackTrace();
 			}
 			return;
-		}		
+		}
 		if( mThreadRunning == true )
 			return;
 //		if (getReturnClassType ().equals(ArrayList.class)) {
@@ -232,7 +236,7 @@ public abstract class AsyncHttp<R>
 			mThreadRunning = true;
 //			hideDialog();
 //			BaseActivity activity = (BaseActivity)context;
-			if ( result == null ) {
+			if ( result == null ) { // TODO SOFTM : CHECK
 				R rtn;
 				try {
 					Toast.makeText(context, context.getString(net.softm.lib.R.string.msg_network_sockettimeout), Toast.LENGTH_SHORT).show();

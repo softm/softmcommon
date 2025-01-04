@@ -9,3 +9,4 @@ src/main/main.iml
 src/main/gen/
 .idea/gradle.xml
 local.properties
+**/.DS_Store

@@ -32,6 +32,7 @@ public class Connectivity {
 			return false;
 		}
 	}
+
 	public static boolean isConnected(Context context) {
 		ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 

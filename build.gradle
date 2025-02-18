@@ -21,15 +21,21 @@ android {
         }
         dev {
         }
+        local {
+        }
         local_asset {
         }
     }
     buildTypes {
+        debug {
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         dev {
+        }
+        local {
         }
         local_asset {
         }

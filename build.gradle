@@ -10,6 +10,12 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+        rdebug {
+            storeFile file('../softm.keystore.jks')
+            storePassword 'softm123'
+            keyAlias = 'softm'
+            keyPassword 'softm123'
+        }
         debug {
         }
         release {
@@ -27,6 +33,10 @@ android {
         }
     }
     buildTypes {
+        rdebug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         debug {
         }
         release {
